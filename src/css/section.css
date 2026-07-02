@@ -4,15 +4,23 @@
     padding: 64px 0;
 }
 
+.section-title {
+    margin-bottom: 32px;
+}
+
 /* Styles for Tablet devices */
 @media only screen and (min-width: 768px) {
 }
 
 /* Styles for Desktop devices */
 @media only screen and (min-width: 1440px) {
-.section {
+    .section {
     padding: 92px 0;
-}
+    }
+    .section-title {
+    margin-bottom: 40px;
+    }
+
 }
 
 
