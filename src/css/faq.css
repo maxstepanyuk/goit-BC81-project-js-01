@@ -1,0 +1,36 @@
+.faq .container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.ac-header {
+  /* h3 */
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.ac-icon {
+  /* svg */
+  width: 15.44px;
+  height: 8.88px;
+  fill: currentColor;
+  transition: transform 200ms ease-in-out;
+  flex-shrink: 0;
+}
+
+.ac.is-active .ac-icon {
+  transform: rotate(180deg);
+}
+
+.ac .ac-trigger::after {
+  display: none;
+}
+
+.accordion-container .ac .ac-trigger {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
