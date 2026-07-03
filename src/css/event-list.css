@@ -94,7 +94,7 @@ body {
   stroke: black;
   transition: transform 200ms ease-in-out;
 }
-.icon-rotate:hover {
+.icon-rotate-rotated {
   transform: rotate(180deg);
 }
 .event-category-item {
