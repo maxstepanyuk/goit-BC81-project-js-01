@@ -37,8 +37,8 @@ export function renderEvents(events) {
           height="251"
         />
         <div class="event-info">
-          <p class="event-title">${category.name}</p>
-          <p class="event-text">${category.tags}</p>
+          <p class="event-title">${name}</p>
+          <p class="event-text">${category.name}</p>
           <p class="event-price">від ${price.value} грн</p>
         </div>
         <button type="button" class="event-details-btn" data-event-id="${_id}">Детальніше</button>
