@@ -1,3 +1,17 @@
-<section class="section event-list">
-  <div class="container"></div>
+<section class="section event-list" id="event-list">
+  <div class="container">
+    <h2 class="section-title">Яке свято плануємо?</h2>
+
+    <div class="event-list-categories">
+      <button class="event-category-select" type="button">
+        <span class="current-category">Всі події</span>
+        <svg class="icon-rotate" width="11.6" height="6.7">
+          <use href="../img/sprite.svg#icon-down"></use>
+        </svg>
+      </button>
+      <ul class="event-category-list js-event-category-list is-hidden"></ul>
+    </div>
+    <ul class="events-list"></ul>
+    <button class="show-more-btn is-hidden">Показати більше</button>
+  </div>
 </section>
