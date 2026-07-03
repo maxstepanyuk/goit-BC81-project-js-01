@@ -29,7 +29,7 @@ export function renderCategories(allcategories) {
 export function renderEvents(events) {
   const markup = events
     .map(({ _id, name, price, category, image }) => {
-      return `<li class="event-item" data-event-id="${_id}">
+      return `<li class="event-item">
         <img
           src="${image}"
           alt=""${name}"
@@ -41,7 +41,7 @@ export function renderEvents(events) {
           <p class="event-text">${category.tags}</p>
           <p class="event-price">від ${price.value} грн</p>
         </div>
-        <button type="button" class="event-details-btn">Детальніше</button>
+        <button type="button" class="event-details-btn" data-event-id="${_id}">Детальніше</button>
       </li>`;
     })
     .join('');
