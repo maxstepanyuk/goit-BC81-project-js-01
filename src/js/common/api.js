@@ -9,7 +9,7 @@ export async function getCategories() {
 }
 
 export async function getEvents(page = 1, categoryId = '') {
-  if (categoryId === 'all' || categoryId === undefined) {
+  if (categoryId === 'all' || categoryId === undefined || categoryId === '') {
     const response = await axios.get(
       `${API_ENDPOINTS.EVENTS}?page=${page}&limit=${API_ENDPOINTS.LIMIT}`
     );
