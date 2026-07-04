@@ -1,208 +1,197 @@
-
 .section.footer {
-    padding: 48px 0;
+  padding: 48px 0;
 }
 
-.footer-content{
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    margin-bottom: 40px;
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 40px;
 }
 
-.footer-logo-reference{
-    display: flex;
-    position: relative;
-    transition: background-color 200ms ease-in-out
+.footer-logo-reference {
+  display: flex;
+  position: relative;
+  transition: background-color 200ms ease-in-out;
 }
 
-.footer-logo-reference::after{
-
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border: 1px solid #000;
-    border-radius: 6px;
-    opacity: 0;
-    transition: opacity 200ms ease-in-out, border-color 200ms ease-in-out;
+.footer-logo-reference::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid #000;
+  border-radius: 6px;
+  opacity: 0;
+  transition:
+    opacity 200ms ease-in-out,
+    border-color 200ms ease-in-out;
 }
 
 .footer-logo-reference:hover,
-.footer-logo-reference:focus{
-    background-color: #fff6dc;
+.footer-logo-reference:focus {
+  background-color: #fff6dc;
 }
 
 .footer-logo-reference:hover::after,
-.footer-logo-reference:focus::after{
-    opacity: 1;
+.footer-logo-reference:focus::after {
+  opacity: 1;
 }
 
-.footer-logo-reference:active::after{
-    border-color: #ffd554;
-    opacity: 1;
+.footer-logo-reference:active::after {
+  border-color: #ffd554;
+  opacity: 1;
 }
 
-.footer-logo-icon{
-    transition: fill 200ms ease-in-out;
+.footer-logo-icon {
+  transition: fill 200ms ease-in-out;
 }
 
-.footer-logo-reference:active .footer-logo-icon{
-    fill: #ffd554;
+.footer-logo-reference:active .footer-logo-icon {
+  fill: #ffd554;
 }
 
-.footer-navigation{
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+.footer-navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.footer-navigation-list{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
-    
+.footer-navigation-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
 }
 
 /* !!! +++++ Пример реализации ховера, фокуса и актива для текстовых ссылок по макету */
 
-.footer-navigation-item-reference{
-    font-family: "Open Sans", sans-serif;
-    font-weight: 400;
-    font-size: 18px;
-    line-height: 29px;
-    color: #000;
-    position: relative;
-    transition: color 200ms ease-in-out;
+.footer-navigation-item-reference {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 29px;
+  color: #000;
+  position: relative;
+  transition: color 200ms ease-in-out;
 }
 
-.footer-navigation-item-reference::after{
-    content: '';
-    width: 100%;
-    position: absolute;
-    height: 1px;
-    background-color: #000;
-    left: 0px;
-    bottom: -1px;
-    opacity: 0;
-    transition: opacity 200ms ease-in-out, background-color 200ms ease-in-out;
+.footer-navigation-item-reference::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 1px;
+  background-color: #000;
+  left: 0px;
+  bottom: -1px;
+  opacity: 0;
+  transition:
+    opacity 200ms ease-in-out,
+    background-color 200ms ease-in-out;
 }
 
 .footer-navigation-item-reference:hover::after,
-.footer-navigation-item-reference:focus::after{
-    opacity: 1;
+.footer-navigation-item-reference:focus::after {
+  opacity: 1;
 }
 
-.footer-navigation-item-reference:active{
-    color: #ffd554;
-    
+.footer-navigation-item-reference:active {
+  color: #ffd554;
 }
 
 .footer-navigation-item-reference:active::after {
-    background-color: #ffd554;
-    opacity: 1;
+  background-color: #ffd554;
+  opacity: 1;
 }
 
 /* !!! --- Пример реализации ховера, фокуса и актива для текстовых ссылок по макету */
 
-.footer-social-list{
-    display: flex;
-    justify-content: center;
-    gap: 32px;
+.footer-social-list {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
 }
-
 
 /* !!! +++ Пример реализации ховера, фокуса и актива для иконок ссылок по макету */
 
-.footer-social-reference{
-    display:flex;
-    position: relative;
-    transition: background-color 200ms ease-in-out;
+.footer-social-reference {
+  display: flex;
+  position: relative;
+  transition: background-color 200ms ease-in-out;
 }
 
 .footer-social-reference::after {
-    content: '';
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    border: 1px solid #000;
-    border-radius: 6px;
-    opacity: 0;
-    transition: opacity 200ms ease-in-out, border-color 200ms ease-in-out;
-    
-
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid #000;
+  border-radius: 6px;
+  opacity: 0;
+  transition:
+    opacity 200ms ease-in-out,
+    border-color 200ms ease-in-out;
 }
 
 .footer-social-reference:hover,
-.footer-social-reference:focus{
-
-    background-color: #fff6dc;
+.footer-social-reference:focus {
+  background-color: #fff6dc;
 }
 
-
 .footer-social-reference:hover::after,
-.footer-social-reference:focus::after{
-
-    opacity: 1;
+.footer-social-reference:focus::after {
+  opacity: 1;
 }
 
 .footer-social-reference:active::after {
-
-    border-color: #ffd554;
-    opacity: 1;
-
+  border-color: #ffd554;
+  opacity: 1;
 }
 
-.footer-social-icon{
-transition: fill 200ms ease-in-out;
+.footer-social-icon {
+  transition: fill 200ms ease-in-out;
 }
 
-.footer-social-reference:active .footer-social-icon{
-    fill: #ffd554;
+.footer-social-reference:active .footer-social-icon {
+  fill: #ffd554;
 }
-
-
 
 /* !!! ---- Пример реализации ховера, фокуса и актива для иконок ссылок по макету */
 
-.footer-credits{
-    display:flex;
-    justify-content: center;
-    padding-top: 31px;
-    border-top: 1px solid rgba(0, 0, 0, 0.15);
+.footer-credits {
+  display: flex;
+  justify-content: center;
+  padding-top: 31px;
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
 }
 
-.footer-credits-text{
-
-    font-family: "Open Sans", sans-serif;
-        font-weight: 400;
-        font-size: 16px;
-        line-height: 26px;
-        color: #000;
+.footer-credits-text {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #000;
 }
 
 @media only screen and (min-width: 768px) {
-    .footer-navigation-list{
-        flex-direction: row;
-    }
+  .footer-navigation-list {
+    flex-direction: row;
+  }
 
-    .footer-social-icon{
-        width: 24px;
-        height: 24px;
-    }
+  .footer-social-icon {
+    width: 24px;
+    height: 24px;
+  }
 
-    .footer-logo-icon {
-        width: 414px;
-        height: 70px;
-    }
-
-        
+  .footer-logo-icon {
+    width: 414px;
+    height: 70px;
+  }
 }
 
 @media only screen and (min-width: 1440px) {
-    .section.footer {
-        padding: 64px 0;
-    }
+  .section.footer {
+    padding: 64px 0;
+  }
 }
