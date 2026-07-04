@@ -33,7 +33,7 @@ main {
 main:has(.back-link) {
   text-align: center;
 }
-.loader {
+
   .loader {
     --color-1: #000000;
     --size: 0.85px;
@@ -45,6 +45,7 @@ main:has(.back-link) {
     display: inline-block;
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
+    margin: 0 auto;
   }
 
   @keyframes rotation {
@@ -55,4 +56,7 @@ main:has(.back-link) {
       transform: rotate(360deg);
     }
   }
+
+.loader.is-hidden{
+  display: none;
 }
