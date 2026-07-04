@@ -10,10 +10,15 @@
   -webkit-text-size-adjust: 100%;
 }
 
+html {
+scroll-behavior: smooth;
+}
+
 body {
   font-family: var(--main-font-family); /* Open Sans */
   color: #000;
   background-color: #fffaed;
+  
 }
 
 h2 {
