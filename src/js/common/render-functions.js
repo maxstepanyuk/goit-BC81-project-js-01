@@ -1,5 +1,7 @@
 import { getCategoryClass } from './helpers';
 import { refs } from './refs';
+import SimpleBar from 'simplebar';
+import 'simplebar/dist/simplebar.css';
 
 export function renderCategories(allcategories) {
   const categoryList = [
@@ -24,6 +26,11 @@ export function renderCategories(allcategories) {
   refs.categoriesListEl.innerHTML = markup;
   if (refs.firstCategoryButton) {
     refs.firstCategoryButton.classList.add('categories__btn--active');
+  }
+  if (window.innerWidth < 768 && !refs.categoriesListEl.SimpleBar) {
+    new SimpleBar(refs.categoriesListEl, {
+      autoHide: false,
+    });
   }
 }
 
