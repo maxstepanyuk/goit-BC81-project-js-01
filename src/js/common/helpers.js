@@ -1,3 +1,4 @@
+import { refs } from './refs';
 import { renderCategories } from './render-functions';
 
 export function getCategoryClass(total, index) {
@@ -13,4 +14,11 @@ export function getCategoryClass(total, index) {
   if (remainder === 2) return 'row-last-2';
   if (remainder === 1) return 'row-last-1';
   return '';
+}
+// LOADER
+export function showLoader() {
+  refs.loader.classList.remove('is-hidden');
+}
+export function hideLoader() {
+  refs.loader.classList.add('is-hidden');
 }

@@ -4,4 +4,5 @@ export const refs = {
   categoriesListOpen: document.querySelector('.event-category-list'),
   eventsList: document.querySelector('.events-list'),
   firstCategoryButton: document.querySelector('.categories__btn'),
+  loader: document.querySelector('.loader'),
 };

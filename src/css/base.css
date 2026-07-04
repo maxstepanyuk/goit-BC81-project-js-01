@@ -11,14 +11,13 @@
 }
 
 html {
-scroll-behavior: smooth;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: var(--main-font-family); /* Open Sans */
   color: #000;
   background-color: #fffaed;
-  
 }
 
 h2 {
@@ -33,4 +32,27 @@ main {
 }
 main:has(.back-link) {
   text-align: center;
+}
+.loader {
+  .loader {
+    --color-1: #000000;
+    --size: 0.85px;
+    width: calc(48 * var(--size));
+    height: calc(48 * var(--size));
+    border: calc(5 * var(--size)) solid var(--color-1);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 }
