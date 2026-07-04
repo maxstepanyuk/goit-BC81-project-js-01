@@ -2,19 +2,25 @@
   font-family: var(--second-font-family);
 }
 
+.feedback-swiper.swiper {
+  --swiper-theme-color: #000000;
+}
+
 .feedback-list {
   display: flex;
   flex-direction: row;
-  gap: 32px;
 
-  /* todo: for demo. delete when add swiper */
-  flex-wrap: wrap;
+  margin-bottom: 16px;
 }
 
-.feedback-item {
+.feedback-item,
+.feedback-item.swiper-slide {
   display: flex;
   flex-direction: column;
   gap: 24px;
+
+  justify-content: space-between;
+  height: auto;
 
   border-radius: 8px;
   padding: 32px;
@@ -60,6 +66,13 @@
 .feedback-date {
   line-height: 1.6;
 }
+
+/* pagination */
+
+.feedback-pagination.swiper-pagination {
+  position: static;
+}
+
 
 .feedback-icon {
   width: 16px;
