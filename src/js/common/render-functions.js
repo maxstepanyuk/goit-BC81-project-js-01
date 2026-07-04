@@ -34,7 +34,7 @@ export function renderCategories(allcategories) {
   }
 }
 
-refs.categoriesListOpenSvgBtn.addEventListener('click', openCategoriesList);
+refs.caregoryListSelect.addEventListener('click', openCategoriesList);
 export function openCategoriesList(event) {
   refs.categoriesListOpenSvgBtn.classList.toggle('icon-rotate-rotated');
   refs.categoriesListOpen.classList.toggle('is-hidden');
