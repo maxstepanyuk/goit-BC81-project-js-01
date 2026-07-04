@@ -8,8 +8,16 @@ export async function getCategories() {
   return response.data;
 }
 
-export async function getEvents() {
-  const response = await axios.get(API_ENDPOINTS.EVENTS);
-
-  return response.data;
+export async function getEvents(page = 1, categoryId = '') {
+  if (categoryId === 'all' || categoryId === undefined) {
+    const response = await axios.get(
+      `${API_ENDPOINTS.EVENTS}?page=${page}&limit=${API_ENDPOINTS.LIMIT}`
+    );
+    return response.data;
+  } else {
+    const response = await axios.get(
+      `${API_ENDPOINTS.EVENTS}?page=${page}&limit=${API_ENDPOINTS.LIMIT}&category=${categoryId}`
+    );
+    return response.data;
+  }
 }
