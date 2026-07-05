@@ -3,7 +3,7 @@
 }
 
 .about-us-title {
-  margin-bottom: 24px;
+  margin-bottom: 32px;
 
   font-family: var(--second-font-family);
   font-weight: 500;
@@ -16,20 +16,30 @@
 
 .about-us-slider-wrapper {
   position: relative;
+
+  --about-us-slider-height: 458px;
+}
+
+.about-us .swiper {
+  position: relative;
+  z-index: 0;
 }
 
 .about-us-slider {
+  height: var(--about-us-slider-height);
   overflow: hidden;
 }
 
 .about-us .swiper-wrapper {
   display: flex;
+  height: 100%;
 }
 
 .about-us-slide {
   position: relative;
   flex-shrink: 0;
   width: 100%;
+  height: 100%;
 }
 
 .about-us-picture {
@@ -37,6 +47,7 @@
 }
 
 .about-us-image {
+  display: block;
   width: 100%;
   height: auto;
   border-radius: 4px;
@@ -44,14 +55,14 @@
 }
 
 .about-us-text {
-  margin-top: 15px;
+  margin-top: 16px;
 
   font-family: var(--second-font-family);
   font-weight: 500;
   font-size: 28px;
   line-height: 1.2;
   letter-spacing: 0.05em;
-  color: #000;
+  color: #000000;
 }
 
 .about-us-controls {
@@ -63,31 +74,76 @@
 }
 
 .about-us-pagination {
+  position: static !important;
+
   display: flex;
   align-items: center;
+  justify-content: flex-start;
   gap: 8px;
+
+  width: auto !important;
+  height: 14px;
+  margin: 0 0 0 8px !important;
+  transform: none !important;
 }
 
-.about-us-pagination .swiper-pagination-bullet {
+.about-us .about-us-pagination.swiper-pagination-bullets,
+.about-us .about-us-pagination.swiper-pagination-horizontal,
+.about-us .swiper-pagination-bullets.swiper-pagination-horizontal {
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  width: auto !important;
+  transform: none !important;
+}
+
+.about-us .about-us-pagination .swiper-pagination-bullet {
+  display: block;
   flex-shrink: 0;
 
-  width: 8px;
-  height: 8px;
-  margin: 0;
+  width: 8px !important;
+  height: 8px !important;
+  margin: 0 !important;
 
   border-radius: 50%;
   background-color: #c7c2b6;
-  opacity: 1;
+  opacity: 1 !important;
+
+  transition:
+    width 250ms ease,
+    height 250ms ease,
+    background-color 250ms ease;
 }
 
-.about-us-pagination .swiper-pagination-bullet-active {
+.about-us .about-us-pagination .swiper-pagination-bullet-active {
+  width: 14px !important;
+  height: 14px !important;
+
   background-color: #000000;
+}
+
+.about-us
+  .about-us-pagination
+  .swiper-pagination-bullet-active
+  + .swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.about-us
+  .about-us-pagination
+  .swiper-pagination-bullet:has(+ .swiper-pagination-bullet-active) {
+  width: 10px !important;
+  height: 10px !important;
 }
 
 .about-us-buttons {
   display: flex;
   align-items: center;
   gap: 8px;
+  z-index: 10;
 }
 
 .about-us-button {
@@ -122,7 +178,10 @@
 .about-us-button.swiper-button-disabled,
 .about-us-button:disabled {
   cursor: not-allowed;
-  opacity: 0.35;
+  opacity: 1;
+  color: #b7b7b7;
+  background-color: #f3f3f3;
+  border-color: #e6e6e6;
 }
 
 .about-us-button-icon {
@@ -136,6 +195,15 @@
 @media only screen and (min-width: 768px) {
   .about-us-title {
     margin-bottom: 40px;
+  }
+
+  .about-us-slider-wrapper {
+    --about-us-slider-height: 395px;
+  }
+
+  .about-us-picture,
+  .about-us-image {
+    height: 100%;
   }
 
   .about-us-image {
@@ -159,15 +227,21 @@
 
   .about-us-controls {
     justify-content: center;
+    height: 32px;
+    margin-top: 8px;
+  }
 
-    margin-top: 20px;
+  .about-us-pagination {
+    justify-content: center;
+    margin: 0 auto !important;
   }
 
   .about-us-buttons {
     position: absolute;
-    top: 50%;
+    top: calc(var(--about-us-slider-height) / 2);
     left: 0;
     right: 0;
+    z-index: 10;
 
     justify-content: space-between;
 
@@ -189,17 +263,17 @@
   .about-us-button-next {
     margin-right: -24px;
   }
-
-  .about-us-pagination .swiper-pagination-bullet {
-    width: 8px;
-    height: 8px;
-  }
 }
 
 /* Desktop */
 @media only screen and (min-width: 1440px) {
   .about-us-title {
     margin-bottom: 40px;
+    font-size: 60px;
+  }
+
+  .about-us-slider-wrapper {
+    --about-us-slider-height: 736px;
   }
 
   .about-us-text {
@@ -213,9 +287,10 @@
     line-height: 1.2;
   }
 
-  .about-us-button {
-    width: 48px;
-    height: 48px;
+  .about-us-controls {
+    justify-content: center;
+    height: 28px;
+    margin-top: 48px;
   }
 
   .about-us-button-prev {
@@ -225,9 +300,4 @@
   .about-us-button-next {
     margin-right: -24px;
   }
-
-  .about-us-controls {
-    margin-top: 24px;
-  }
 }
-/* test */
