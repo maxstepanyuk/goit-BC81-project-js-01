@@ -2,13 +2,54 @@
   display: flex;
   flex-direction: column;
   gap: 40px;
+  padding: 64px 20px;
+
+  /* tablet */
+  @media only screen and (min-width: 768px) {
+    padding: 64px 32px;
+  }
+
+  /* desktop */
+  @media only screen and (min-width: 1440px) {
+    padding: 92px 64px;
+  }
 }
 
-.ac-header {
+.faq-title {
+  font-family: var(--main-font-family);
+
+  /* desktop */
+  @media only screen and (min-width: 1440px) {
+    font-size: 60px;
+  }
+}
+
+.accordion-container .ac {
+  background-color: transparent;
+}
+
+.accordion-container .ac .ac-header .ac-trigger {
   /* h3 */
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 24px;
+  padding: 20px 0;
+  font-family: var(--main-font-family);
   font-weight: 700;
   font-size: 20px;
   line-height: 1.6;
+  text-align: left;
+}
+
+.ac-icon-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .ac-icon {
@@ -28,9 +69,11 @@
   display: none;
 }
 
-.accordion-container .ac .ac-trigger {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
+.accordion-container .ac .ac-panel .ac-text {
+  /* text */
+  font-family: var(--main-font-family);
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 1.6;
+  padding: 0px 0px 24px;
 }
