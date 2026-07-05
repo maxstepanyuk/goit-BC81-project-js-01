@@ -1,0 +1,67 @@
+.feedback-title {
+  font-family: var(--second-font-family);
+}
+
+.feedback-list {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+
+  /* todo: for demo. delete when add swiper */
+  flex-wrap: wrap;
+}
+
+.feedback-item {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  border-radius: 8px;
+  padding: 32px;
+
+  background: #fff6dc;
+}
+
+.feedback-content {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.feedback-raiting {
+  /* todo: for demo. update when add js lib */
+  display: flex;
+  gap: 4px;
+}
+
+.feedback-text {
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.feedback-avatar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  gap: 0px;
+}
+
+.feedback-author {
+  font-family: var(--main-font-family);
+  font-weight: 600;
+  font-size: 18px;
+
+  line-height: 1.6;
+}
+
+.feedback-date {
+  line-height: 1.6;
+}
+
+.feedback-icon {
+  width: 16px;
+  height: 16px;
+}
