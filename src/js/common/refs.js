@@ -8,4 +8,5 @@ export const refs = {
   showMoreBtn: document.querySelector('.show-more-btn'),
   loader: document.querySelector('.loader'),
   eventDetailsBtn: document.querySelector('.event-details-btn'),
+  categoriesScroll: document.querySelector('.categories-scroll'),
 };

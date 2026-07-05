@@ -3,6 +3,7 @@ import { refs } from './refs';
 import SimpleBar from 'simplebar';
 import 'simplebar/dist/simplebar.css';
 
+let isScrollDone = false;
 export function renderCategories(allcategories) {
   const categoryList = [
     {
@@ -28,17 +29,29 @@ export function renderCategories(allcategories) {
   if (refs.firstCategoryButton) {
     refs.firstCategoryButton.classList.add('categories__btn--active');
   }
-  if (window.innerWidth < 768 && !refs.categoriesListEl.SimpleBar) {
-    new SimpleBar(refs.categoriesListEl, {
-      autoHide: false,
-    });
-  }
+  // if (window.innerWidth < 768 && !refs.categoriesListEl.SimpleBar) {
+  //   new SimpleBar(refs.categoriesListEl, {
+  //     autoHide: false,
+  //   });
+  // }
 }
 
 refs.caregoryListSelect.addEventListener('click', openCategoriesList);
 export function openCategoriesList(event) {
   refs.categoriesListOpenSvgBtn.classList.toggle('icon-rotate-rotated');
   refs.categoriesListOpen.classList.toggle('is-hidden');
+  if (
+    window.innerWidth < 768 &&
+    !isScrollDone &&
+    !refs.categoriesListOpen.classList.contains('is-hidden')
+  ) {
+    if (window.innerWidth < 768 && !refs.categoriesListEl.SimpleBar) {
+      const simpleBar = new SimpleBar(refs.categoriesScroll, {
+        autoHide: false,
+      });
+      simpleBar.recalculate();
+    }
+  }
 }
 
 export function renderEvents(events) {
