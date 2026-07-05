@@ -1,5 +1,7 @@
 import { getCategoryClass } from './helpers';
 import { refs } from './refs';
+import SimpleBar from 'simplebar';
+import 'simplebar/dist/simplebar.css';
 
 export function renderCategories(allcategories) {
   const categoryList = [
@@ -14,9 +16,10 @@ export function renderCategories(allcategories) {
   const markup = categoryList
     .map(({ _id, name, tags }, index) => {
       const dynamicClass = getCategoryClass(categoryList.length, index);
+      const tagsList = tags.map(tag => `#${tag} `).join('');
       return `<li class="event-category-item ${dynamicClass}" data-category="${_id}">
           <p class="event-category-title">${name}</p>
-          <p class="event-category-tags">${tags.map(tag => `#${tag}, `).join(' ')}</p>
+          <p class="event-category-tags">${tagsList}</p>
         </li>`;
     })
     .join('');
@@ -25,9 +28,14 @@ export function renderCategories(allcategories) {
   if (refs.firstCategoryButton) {
     refs.firstCategoryButton.classList.add('categories__btn--active');
   }
+  if (window.innerWidth < 768 && !refs.categoriesListEl.SimpleBar) {
+    new SimpleBar(refs.categoriesListEl, {
+      autoHide: false,
+    });
+  }
 }
 
-refs.categoriesListOpenSvgBtn.addEventListener('click', openCategoriesList);
+refs.caregoryListSelect.addEventListener('click', openCategoriesList);
 export function openCategoriesList(event) {
   refs.categoriesListOpenSvgBtn.classList.toggle('icon-rotate-rotated');
   refs.categoriesListOpen.classList.toggle('is-hidden');

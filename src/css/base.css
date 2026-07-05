@@ -10,6 +10,11 @@
   -webkit-text-size-adjust: 100%;
 }
 
+html {
+  scroll-behavior: smooth;
+  scrollbar-gutter: stable;
+}
+
 body {
   font-family: var(--main-font-family); /* Open Sans */
   color: #000;
@@ -28,4 +33,31 @@ main {
 }
 main:has(.back-link) {
   text-align: center;
+}
+
+  .loader {
+    --color-1: #000000;
+    --size: 0.85px;
+    width: calc(48 * var(--size));
+    height: calc(48 * var(--size));
+    border: calc(5 * var(--size)) solid var(--color-1);
+    border-bottom-color: transparent;
+    border-radius: 50%;
+    display: inline-block;
+    box-sizing: border-box;
+    animation: rotation 1s linear infinite;
+    margin: 0 auto;
+  }
+
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+.loader.is-hidden{
+  display: none;
 }

@@ -3,7 +3,7 @@
 }
 
 .about-us-title {
-  margin-bottom: 32px;
+  margin-bottom: 24px;
 
   font-family: var(--second-font-family);
   font-weight: 500;
@@ -45,7 +45,6 @@
 
 .about-us-text {
   margin-top: 15px;
-  height: 204px;
 
   font-family: var(--second-font-family);
   font-weight: 500;
@@ -64,55 +63,25 @@
 }
 
 .about-us-pagination {
-  position: static !important;
-
   display: flex;
   align-items: center;
-  justify-content: flex-start;
   gap: 8px;
-
-  width: auto !important;
-  height: 14px;
-  margin: 0 0 0 10px !important;
-  transform: none !important;
 }
 
 .about-us-pagination .swiper-pagination-bullet {
-  display: block;
   flex-shrink: 0;
 
   width: 8px;
   height: 8px;
-  margin: 0 !important;
+  margin: 0;
 
   border-radius: 50%;
   background-color: #c7c2b6;
   opacity: 1;
-
-  transition:
-    width 250ms ease,
-    height 250ms ease,
-    background-color 250ms ease;
 }
 
 .about-us-pagination .swiper-pagination-bullet-active {
-  width: 14px;
-  height: 14px;
-
   background-color: #000000;
-}
-
-.about-us-pagination
-  .swiper-pagination-bullet-active
-  + .swiper-pagination-bullet {
-  width: 10px;
-  height: 10px;
-}
-
-.about-us-pagination
-  .swiper-pagination-bullet:has(+ .swiper-pagination-bullet-active) {
-  width: 10px;
-  height: 10px;
 }
 
 .about-us-buttons {
@@ -188,43 +157,24 @@
     color: #ffffff;
   }
 
-  .about-us-slider-wrapper {
-    --about-us-slider-height: 395px;
-  }
-
-  .about-us-slider {
-    height: var(--about-us-slider-height);
-  }
-
-  .about-us .swiper-wrapper,
-  .about-us-slide,
-  .about-us-picture,
-  .about-us-image {
-    height: 100%;
-  }
-
-  .about-us-image {
-    object-fit: cover;
-  }
-
   .about-us-controls {
     justify-content: center;
-    height: 34px;
-    margin-top: 8px;
+
+    margin-top: 20px;
   }
 
   .about-us-buttons {
     position: absolute;
-    top: calc(var(--about-us-slider-height) / 2);
+    top: 50%;
     left: 0;
     right: 0;
-    z-index: 10;
 
     justify-content: space-between;
 
     pointer-events: none;
     transform: translateY(-50%);
   }
+
   .about-us-button {
     width: 48px;
     height: 48px;
@@ -240,9 +190,9 @@
     margin-right: -24px;
   }
 
-  .about-us-pagination {
-    margin: 0 auto !important;
-    justify-content: center;
+  .about-us-pagination .swiper-pagination-bullet {
+    width: 8px;
+    height: 8px;
   }
 }
 
@@ -250,8 +200,6 @@
 @media only screen and (min-width: 1440px) {
   .about-us-title {
     margin-bottom: 40px;
-    height: 72px;
-    font-size: 60px;
   }
 
   .about-us-text {
@@ -278,28 +226,7 @@
     margin-right: -24px;
   }
 
-  .about-us-slider-wrapper {
-    --about-us-slider-height: 736px;
-  }
-
-  .about-us-slider {
-    height: var(--about-us-slider-height);
-  }
-
-  .about-us .swiper-wrapper,
-  .about-us-slide,
-  .about-us-picture,
-  .about-us-image {
-    height: 100%;
-  }
-
-  .about-us-image {
-    object-fit: cover;
-  }
-
   .about-us-controls {
-    justify-content: center;
-    height: 28px;
-    margin-top: 48px;
+    margin-top: 24px;
   }
 }
