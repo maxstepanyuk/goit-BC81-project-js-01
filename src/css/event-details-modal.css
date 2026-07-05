@@ -1,0 +1,330 @@
+.section.event-details-modal {
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 999 !important;
+  pointer-events: none;
+}
+
+.section.event-details-modal.is-hidden {
+  display: none !important;
+}
+
+.section.event-details-modal .container {
+  max-width: 100% !important;
+  width: 100% !important;
+  height: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin: 0 !important;
+}
+
+.event-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(20, 20, 20, 0.6);
+  backdrop-filter: blur(4px);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow-y: auto;
+  padding: 20px 20px;
+  box-sizing: border-box;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transition:
+    opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    visibility 250ms ease;
+}
+
+.event-modal-overlay.is-open {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.event-modal-overlay.is-hidden {
+  display: none !important;
+}
+
+.modal-product {
+  background-color: #fffaed;
+  border-radius: 8px;
+  position: relative;
+  box-sizing: border-box;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 100%;
+  padding: 64px 20px 24px 20px;
+  max-height: calc(100vh - 20px);
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  color: #000000;
+  pointer-events: auto;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 24px;
+  right: 24px;
+  background: none;
+  border: none;
+  width: 24px;
+  height: 24px;
+  font-size: 28px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  color: #000000;
+  transition:
+    color 250ms ease,
+    transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  line-height: 1;
+}
+
+.modal-close-btn:hover,
+.modal-close-btn:focus {
+  color: #ffd554;
+  outline: none;
+  transform: rotate(90deg);
+}
+
+.modal-event__wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.modal-event__media {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.modal-event__img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.modal-event__content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-event__header-meta {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 32px;
+  margin-bottom: 16px;
+}
+
+.modal-event__category {
+  font-family: 'Public Sans', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #666666;
+}
+
+.modal-event__stars {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+}
+
+.modal-event__star {
+  width: 16px !important;
+  height: 16px !important;
+  flex-shrink: 0 !important;
+  display: block;
+}
+
+.modal-event__star--filled,
+.modal-event__star--half {
+  fill: #000000 !important;
+}
+
+.modal-event__star--empty {
+  fill: #cccccc !important;
+}
+
+.modal-event__title {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 1.2;
+  margin: 0 0 20px 0;
+}
+
+.modal-event__desc {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #000000;
+  margin: 0 0 24px 0;
+}
+
+.modal-event__lists {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 24px;
+}
+
+.modal-event__list-block h3 {
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  margin: 0 0 12px 0;
+}
+
+.modal-event__lists ul {
+  padding-left: 16px;
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 1.6;
+  color: #000000;
+  list-style-type: disc;
+}
+
+.modal-event__lists li {
+  margin-bottom: 8px;
+}
+
+.modal-event__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.modal-event__meta p {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #000000;
+}
+
+.modal-event__meta b {
+  font-weight: 600;
+}
+
+.modal-event__order-btn {
+  width: 100%;
+  max-width: 400px;
+  height: 45px;
+  flex-shrink: 0 !important;
+  background-color: #ffd554;
+  border: 2px solid transparent;
+  border-radius: 6px;
+  font-family: 'IBM Plex Sans', sans-serif;
+  font-weight: 500;
+  font-size: 15px;
+  color: #000000;
+  cursor: pointer;
+  align-self: flex-start;
+  box-sizing: border-box;
+  transition:
+    background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 250ms ease;
+}
+
+.modal-event__order-btn:hover,
+.modal-event__order-btn:focus {
+  background-color: transparent;
+  border-color: #ffd554;
+  outline: none;
+}
+
+.modal-event__order-btn:active {
+  background-color: #fff6dc;
+  border-color: #ffd554;
+}
+
+body.no-scroll {
+  overflow: hidden;
+}
+
+@media screen and (min-width: 375px) {
+  .modal-product {
+    max-width: 375px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .event-modal-overlay {
+    padding: 40px;
+  }
+
+  .modal-product {
+    max-width: 704px;
+    padding: 64px 40px 40px 40px;
+  }
+
+  .modal-event__title {
+    font-size: 32px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .event-modal-overlay {
+    padding: 64px;
+  }
+
+  .modal-product {
+    max-width: 1312px;
+    max-height: calc(100vh - 64px);
+    padding: 64px;
+    overflow: hidden;
+  }
+
+  .modal-event__wrapper {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 32px;
+    overflow-y: hidden;
+  }
+
+  .modal-event__media {
+    flex: 0 0 45%;
+    max-width: 540px;
+  }
+
+  .modal-event__img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border: 1px dashed #cccccc;
+  }
+
+  .modal-event__content {
+    flex: 1;
+    max-height: calc(100vh - 256px);
+    overflow-y: auto;
+    padding-right: 16px;
+  }
+
+  .modal-close-btn {
+    top: 24px;
+    right: 24px;
+  }
+}
