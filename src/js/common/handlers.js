@@ -3,6 +3,7 @@ import { renderCategories, renderEvents } from './render-functions';
 import { refs } from './refs';
 import { API_ENDPOINTS } from './constans';
 import { hideLoader, showLoader } from './helpers';
+import { renderEventModal } from '../event-details-modal.js';
 
 let currentPage = 1;
 let currentCategory = 'all';
@@ -75,8 +76,30 @@ export function checkEventsLimit(totalItems) {
   const limit = checkWidthScreen();
   refs.showMoreBtn.disabled = currentPage * limit >= totalItems;
 }
-export function handleEventDetailsModal(event) {
-  const details = event.target.dataset.eventId;
-  if (!details) return;
-  console.log(details);
+
+export async function handleEventDetailsModal(event) {
+  const targetBtn = event.target.closest('.event-details-btn');
+  if (!targetBtn) return;
+
+  const eventId = targetBtn.dataset.eventId;
+  if (!eventId) return;
+
+  try {
+    const eventData = await getEventById(eventId);
+    renderEventModal(eventData);
+
+    const modalOverlay = document.querySelector('.event-modal-overlay');
+    if (modalOverlay) {
+      modalOverlay.classList.add('is-open');
+      document.body.classList.add('no-scroll');
+    }
+  } catch (error) {
+    if (typeof iziToast !== 'undefined') {
+      iziToast.error({
+        title: 'Error',
+        message: 'Не вдалося завантажити деталі події.',
+        position: 'topRight',
+      });
+    }
+  }
 }
