@@ -81,6 +81,7 @@ export async function handleShowMoreBtnClick() {
     currentPage += 1;
 
     const limit = checkWidthScreen();
+    refs.showMoreBtn.style.opacity = '0';
     const data = await getEvents(currentPage, currentCategory, limit);
 
     if (!data.events.length) {
@@ -99,6 +100,7 @@ export async function handleShowMoreBtnClick() {
     currentPage -= 1;
   } finally {
     hideLoader();
+    refs.showMoreBtn.style.opacity = '1';
   }
 }
 

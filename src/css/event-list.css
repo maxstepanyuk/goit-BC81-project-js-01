@@ -205,11 +205,10 @@ body {
 }
 .event-item img {
   border-radius: 8px;
-  max-width: 304px;
+  /* max-width: 304px; */
   width: 100%;
-  max-height: 213px;
+  /* max-height: 213px; */
   object-fit: cover;
-  border-radius: 8px;
 }
 
 .event-title {
