@@ -4,6 +4,7 @@ import { refs } from './refs';
 import { API_ENDPOINTS } from './constans';
 import { hideLoader, showLoader } from './helpers';
 import { renderEventModal, getEventById } from '../event-details-modal.js';
+import { openBookingModal } from '../booking-modal.js';
 
 let currentPage = 1;
 let currentCategory = 'all';
@@ -168,6 +169,7 @@ function handleOrderButtonClick(event) {
       modalContainer.innerHTML = '';
     }
   }
+  openBookingModal(eventId);
 
   const bookingSection = document.querySelector('.section.booking-modal');
   if (bookingSection) {
