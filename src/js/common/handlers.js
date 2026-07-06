@@ -4,11 +4,6 @@ import { refs } from './refs';
 import { API_ENDPOINTS } from './constans';
 import { hideLoader, showLoader } from './helpers';
 import { renderEventModal, getEventById } from '../event-details-modal.js';
-import {
-  formBooking,
-  modalBooking,
-  openBookingModal,
-} from '../booking-modal.js';
 
 let currentPage = 1;
 let currentCategory = 'all';
@@ -156,7 +151,6 @@ function closeEventDetailsModal() {
     }
   }
 }
-
 function handleOrderButtonClick(event) {
   const eventId = event.currentTarget.dataset.eventId;
   const modalSection = document.querySelector('.section.event-details-modal');
@@ -175,22 +169,10 @@ function handleOrderButtonClick(event) {
     }
   }
 
-  // const bookingSection = document.querySelector('.section.booking-modal');
-  if (modalBooking) {
-    // bookingSection.classList.remove('is-hidden');
-    // bookingSection.classList.add('is-open');
-    // document.body.classList.add('no-scroll');
-    openBookingModal(eventId);
-    // const form = bookingSection.querySelector('.booking-modal_form');
-    if (formBooking) {
-      let hiddenInput = form.querySelector('input[name="eventId"]');
-      if (!hiddenInput) {
-        hiddenInput = document.createElement('input');
-        hiddenInput.type = 'hidden';
-        hiddenInput.name = 'eventId';
-        form.appendChild(hiddenInput);
-      }
-      hiddenInput.value = eventId;
-    }
+  const bookingSection = document.querySelector('.section.booking-modal');
+  if (bookingSection) {
+    bookingSection.classList.remove('is-hidden');
+    bookingSection.classList.add('is-open');
+    document.body.classList.add('no-scroll');
   }
 }
