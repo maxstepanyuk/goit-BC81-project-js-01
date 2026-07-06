@@ -76,16 +76,23 @@ export async function handleGetEventsByCategory(event) {
 export async function handleShowMoreBtnClick() {
   try {
     showLoader();
+    refs.showMoreBtn.disabled = true;
 
     currentPage += 1;
 
     const limit = checkWidthScreen();
     const data = await getEvents(currentPage, currentCategory, limit);
 
+    if (!data.events.length) {
+      refs.showMoreBtn.disabled = true;
+      return;
+    }
+
     renderEvents(data.events);
 
-    renderEvents(eventsToRender);
-    renderedEventsCount += eventsToRender.length;
+    renderedEventsCount += data.events.length;
+    totalCurrentItems = data.totalItems;
+
     checkEventsLimit();
   } catch (error) {
     console.log('error during getting more events by category', error);
@@ -107,8 +114,13 @@ export async function handleShowMoreBtnClick() {
 //   }
 // }
 export function checkEventsLimit() {
-  refs.showMoreBtn.disabled = renderedEventsCount >= totalCurrentItems;
   refs.showMoreBtn.classList.remove('is-hidden-btn-more');
+
+  if (renderedEventsCount >= totalCurrentItems) {
+    refs.showMoreBtn.disabled = true;
+  } else {
+    refs.showMoreBtn.disabled = false;
+  }
 }
 
 export async function handleEventDetailsModal(event) {
