@@ -3,6 +3,7 @@
   inset: 0;
   z-index: 999;
   pointer-events: none;
+  
 }
 
 .section.event-details-modal.is-hidden {
