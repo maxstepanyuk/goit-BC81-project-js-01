@@ -45,6 +45,7 @@ export async function initEventList() {
 }
 
 export async function handleGetEventsByCategory(event) {
+  refs.showMoreBtn.classList.add('is-hidden-btn-more');
   const categoryItem = event.target.closest('.event-category-item');
   if (!categoryItem) return;
 
@@ -83,9 +84,8 @@ export async function handleShowMoreBtnClick() {
 
     renderEvents(data.events);
 
-    renderedEventsCount += data.events.length;
-    totalCurrentItems = data.totalItems;
-
+    renderEvents(eventsToRender);
+    renderedEventsCount += eventsToRender.length;
     checkEventsLimit();
   } catch (error) {
     console.log('error during getting more events by category', error);
@@ -95,8 +95,20 @@ export async function handleShowMoreBtnClick() {
   }
 }
 
+// export function checkEventsLimit() {
+//   refs.showMoreBtn.disabled = renderedEventsCount >= totalCurrentItems;
+// }
+
+// export function checkEventsLimit() {
+//   if (renderedEventsCount >= totalCurrentItems) {
+//     refs.showMoreBtn.classList.add('is-hidden');
+//   } else {
+//     refs.showMoreBtn.classList.remove('is-hidden');
+//   }
+// }
 export function checkEventsLimit() {
   refs.showMoreBtn.disabled = renderedEventsCount >= totalCurrentItems;
+  refs.showMoreBtn.classList.remove('is-hidden-btn-more');
 }
 
 export async function handleEventDetailsModal(event) {
