@@ -131,6 +131,7 @@
   font-weight: 600;
   font-size: 18px;
   color: #000000;
+  line-height: 1.6;
 }
 
 .modal-event__stars {
@@ -152,7 +153,7 @@
 }
 
 .modal-event__star--empty {
-  fill: #cccccc !important;
+  fill: #000000 !important;
 }
 
 .modal-event__title {
@@ -184,6 +185,7 @@
   font-weight: 700;
   font-size: 18px;
   margin: 0 0 8px 0;
+  line-height: 1.6;
 }
 
 .modal-event__lists ul {
@@ -233,6 +235,7 @@
   font-size: 18px;
   color: #000000;
   cursor: pointer;
+  line-height: 1.6;
   align-self: flex-start;
   box-sizing: border-box;
   transition:
