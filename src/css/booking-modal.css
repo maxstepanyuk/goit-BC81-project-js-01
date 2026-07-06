@@ -162,6 +162,9 @@
   cursor: pointer;
   transition: background-color 0.2s ease-in-out;
 }
+.booking-modal-submit-btn.is-hidden {
+  display: none;
+}
 
 .booking-modal-submit-btn:hover,
 .booking-modal-submit-btn:focus-visible {
@@ -209,4 +212,29 @@
     top: 32px;
     right: 32px;
   }
+}
+.loader-booking {
+  --color-1: #000000;
+  --size: 1px;
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border: calc(5 * var(--size)) solid var(--color-1);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader-booking.is-hidden {
+  display: none;
 }

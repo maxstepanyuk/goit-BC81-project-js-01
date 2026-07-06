@@ -141,7 +141,7 @@ async function handleFormBookingSubmit(event) {
 
   try {
     hideSubmitBtnBooking();
-    showLoader();
+    showLoaderBooking();
     submitBtnBooking.disabled = true;
     const { data } = await axios.post(`${BASE_URL}/orders`, formData);
     const { eventName, orderNum } = data;
@@ -171,7 +171,7 @@ async function handleFormBookingSubmit(event) {
     }
   } finally {
     showSubmitBtnBooking();
-    hideLoader();
+    hideLoaderBooking();
     submitBtnBooking.disabled = false;
   }
 }
@@ -229,4 +229,11 @@ function handleFormBookingInput(event) {
     console.log(formDataBooking.comment);
   }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formDataBooking));
+}
+const loaderBooking = document.querySelector('.loader-booking');
+export function showLoaderBooking() {
+  loaderBooking.classList.remove('is-hidden');
+}
+export function hideLoaderBooking() {
+  loaderBooking.classList.add('is-hidden');
 }
