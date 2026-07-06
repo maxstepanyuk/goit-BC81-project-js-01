@@ -13,7 +13,7 @@ const swiperOptions = {
 
   pagination: {
     el: '.feedback-pagination',
-    // dynamicBullets: true, // todo: only PC
+    dynamicBullets: true,
   },
   navigation: {
     nextEl: '.feedback-next',
