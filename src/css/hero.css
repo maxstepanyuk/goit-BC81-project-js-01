@@ -1,3 +1,7 @@
+.tablet-break {
+  display: none;
+}
+
 .hero-title {
   margin-bottom: 24px;
   font-family: var(--second-font-family);
@@ -8,9 +12,16 @@
   color: #000;
   @media screen and (min-width: 768px) {
     width: 704px;
+    .mobile-break {
+      display: none;
+    }
+    .tablet-break {
+      display: inline;
+    }
   }
   @media screen and (min-width: 1440px) {
     width: 809px;
+    font-size: 72px;
   }
 }
 .hero-text {
