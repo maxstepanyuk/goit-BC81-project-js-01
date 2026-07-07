@@ -3,7 +3,6 @@
   inset: 0;
   z-index: 999;
   pointer-events: none;
-  
 }
 
 .section.event-details-modal.is-hidden {
@@ -286,10 +285,7 @@ body.no-scroll {
   .event-modal-overlay {
     padding: 40px;
   }
-  .modal-close-btn {
-    top: 20px;
-    right: 20px;
-  }
+
   .modal-event__header-meta {
     flex-direction: row;
     align-items: center;
