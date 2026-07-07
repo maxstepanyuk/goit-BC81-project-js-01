@@ -25,11 +25,6 @@ const commentError = commentInput
   .querySelector('.booking-modal-error');
 
 formBooking.addEventListener('submit', handleFormBookingSubmit);
-// кнопка в хедері замовити івент
-// const openBtn = document.querySelector('.modal-event__order-btn');
-// openBtn.addEventListener('click', () => {
-//   openBookingModal('6877b9f116ae59c7b60d90a2');
-// });
 
 let currentEventId = null;
 
@@ -159,7 +154,6 @@ async function handleFormBookingSubmit(event) {
         position: 'topRight',
         timeout: 6000,
       });
-      console.log(error);
     }
     if (error.status === 404) {
       iziToast.error({
@@ -167,7 +161,6 @@ async function handleFormBookingSubmit(event) {
         position: 'topRight',
         timeout: 6000,
       });
-      console.log(error);
     }
   } finally {
     showSubmitBtnBooking();
@@ -188,16 +181,13 @@ const formDataBooking = {
   phone: '',
   comment: '',
 };
-// name = event.target.value;
 function allLogicBookingToLocalStorage() {
-  // проверить есть ли в локал сторидж значения инпутов формов и если есть записать их к инпуту;
   checkBookingLocalStorageValues();
   formBooking.addEventListener('input', handleFormBookingInput);
 }
 
 function checkBookingLocalStorageValues() {
   const storageData = JSON.parse(localStorage.getItem(STORAGE_KEY));
-  console.log(storageData);
   if (storageData) {
     formBooking.elements.name.value = storageData.name;
     formBooking.elements.phone.value = storageData.phone;
@@ -213,20 +203,14 @@ function clearBookingLocalStorage() {
 }
 
 function handleFormBookingInput(event) {
-  // const { name, phone, comment } = formDataBooking;
-  console.log(event.target);
-
   if (event.target === formBooking.elements.name) {
     formDataBooking.name = event.target.value;
-    console.log(formDataBooking.name);
   }
   if (event.target === formBooking.elements.phone) {
     formDataBooking.phone = event.target.value;
-    console.log(formDataBooking.phone);
   }
   if (event.target === formBooking.elements.comment) {
     formDataBooking.comment = event.target.value;
-    console.log(formDataBooking.comment);
   }
   localStorage.setItem(STORAGE_KEY, JSON.stringify(formDataBooking));
 }
