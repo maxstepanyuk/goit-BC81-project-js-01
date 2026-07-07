@@ -4,8 +4,6 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
-import 'css-star-rating/css/star-rating.css';
-
 const aboutUsSlider = document.querySelector('.about-us-slider');
 
 if (aboutUsSlider) {

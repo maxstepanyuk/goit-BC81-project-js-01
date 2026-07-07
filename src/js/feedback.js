@@ -3,6 +3,8 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 
+import 'css-star-rating/css/star-rating.css';
+
 const feedbackSwiperElement = document.querySelector('.feedback-swiper');
 
 const MOBILE_WIDTH_PX = 375;
