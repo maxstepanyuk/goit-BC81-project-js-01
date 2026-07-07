@@ -1,5 +1,7 @@
 import { refs } from './refs';
 import { renderCategories } from './render-functions';
+import iziToast from 'izitoast';
+import 'izitoast/dist/css/iziToast.min.css';
 
 export function getCategoryClass(total, index) {
   const remainder = total % 4;
@@ -19,4 +21,12 @@ export function showLoader() {
 }
 export function hideLoader() {
   refs.loader.classList.add('is-hidden');
+}
+export function showErrorNotification(message = 'Щось пішло не так') {
+  iziToast.error({
+    title: 'Помилка',
+    message: message,
+    position: 'topRight',
+    timeout: 5000,
+  });
 }

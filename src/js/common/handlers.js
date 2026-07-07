@@ -2,7 +2,7 @@ import { getCategories, getEvents } from './api';
 import { renderCategories, renderEvents } from './render-functions';
 import { refs } from './refs';
 import { API_ENDPOINTS } from './constans';
-import { hideLoader, showLoader } from './helpers';
+import { hideLoader, showErrorNotification, showLoader } from './helpers';
 import { renderEventModal, getEventById } from '../event-details-modal.js';
 import { openBookingModal } from '../booking-modal.js';
 
@@ -38,6 +38,7 @@ export async function initEventList() {
 
     checkEventsLimit();
   } catch (error) {
+    showErrorNotification('Не вдалося завантажити список подій');
     console.log('error events list', error);
   } finally {
     hideLoader();
@@ -67,6 +68,7 @@ export async function handleGetEventsByCategory(event) {
 
     checkEventsLimit();
   } catch (error) {
+    showErrorNotification('Не вдалося завантажити список категорій подій');
     console.log('error during getting events by category', error);
   } finally {
     hideLoader();
@@ -77,14 +79,19 @@ export async function handleShowMoreBtnClick() {
   try {
     showLoader();
     refs.showMoreBtn.disabled = true;
-
+    refs.showMoreBtn.style.opacity = '0';
     currentPage += 1;
 
     const limit = checkWidthScreen();
-    refs.showMoreBtn.style.opacity = '0';
     const data = await getEvents(currentPage, currentCategory, limit);
 
+    // if (!data.events.length) {
+    //   refs.showMoreBtn.disabled = true;
+    //   return;
+    // }
     if (!data.events.length) {
+      currentPage -= 1;
+      checkEventsLimit();
       refs.showMoreBtn.disabled = true;
       return;
     }
@@ -96,6 +103,7 @@ export async function handleShowMoreBtnClick() {
 
     checkEventsLimit();
   } catch (error) {
+    showErrorNotification('Не вдалося завантажити список більше подій');
     console.log('error during getting more events by category', error);
     currentPage -= 1;
   } finally {
@@ -153,6 +161,7 @@ export async function handleEventDetailsModal(event) {
       orderBtn.addEventListener('click', handleOrderButtonClick);
     }
   } catch (error) {
+    showErrorNotification('Не вдалося завантажити інформацію про дану подію');
     console.log('error during opening event modal', error);
   }
 }
