@@ -37,6 +37,7 @@ const swiperOptions = {
   pagination: {
     el: '.feedback-pagination',
     dynamicBullets: true,
+    clickable: true,
   },
   navigation: {
     nextEl: '.feedback-next',
