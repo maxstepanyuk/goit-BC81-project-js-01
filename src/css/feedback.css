@@ -50,7 +50,7 @@
   gap: 24px;
 }
 
-.feedback-raiting.rating{
+.feedback-raiting.rating {
   margin: 0px;
 }
 
@@ -140,6 +140,24 @@
   height: 48px;
 
   background: #f2f2f2;
+
+  transition:
+    border 0.2s ease-in-out,
+    background 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border: 2px solid #ffd554;
+    background: #ffffff;
+  }
+  &:active {
+    border: 2px solid #ffd554;
+    background: #fff6dc;
+  }
+  &:disabled {
+    background: #f2f2f2;
+    opacity: 0.3;
+  }
 }
 
 .feedback-prev {
