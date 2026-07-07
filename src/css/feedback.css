@@ -50,10 +50,33 @@
   gap: 24px;
 }
 
-.feedback-raiting {
-  /* todo: for demo. update when add js lib */
+.feedback-raiting.rating{
+  margin: 0px;
+}
+
+.feedback-raiting .star-container {
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: row;
   gap: 4px;
+  margin: 0px;
+}
+
+.feedback-raiting .star {
+  width: 24px;
+  height: 24px;
+}
+
+.feedback-raiting .star-icon {
+  width: 17px;
+  height: 17px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: auto;
+  left: auto;
+  fill: #000 !important;
 }
 
 .feedback-text {
