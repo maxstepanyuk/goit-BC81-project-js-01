@@ -13,13 +13,43 @@
   align-items: center;
   gap: 5px;
   text-decoration: none;
+  position: relative;
+  transition: background-color 200ms ease-in-out;
 }
 
-.logo-text {
-  font-family: sans-serif;
-  font-size: 22px;
-  font-weight: 500;
-  color: #000000;
+.header-logo::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border: 1px solid #000;
+  border-radius: 6px;
+  opacity: 0;
+  transition:
+    opacity 200ms ease-in-out,
+    border-color 200ms ease-in-out;
+}
+
+.header-logo:hover,
+.header-logo:focus {
+  background-color: #fff6dc;
+}
+
+.header-logo:hover::after,
+.header-logo:focus::after {
+  opacity: 1;
+}
+
+.header-logo:active::after {
+  border-color: #ffd554;
+  opacity: 1;
+}
+
+.header-logo {
+  transition: fill 200ms ease-in-out;
+}
+.header-logo:active {
+  fill: #ffd554;
 }
 
 .consultation-btn {
@@ -27,25 +57,55 @@
   color: #000000;
   border: none;
   border-radius: 8px;
-  font-family: sans-serif;
-  font-size: 16px;
-  font-weight: 700;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.6;
+  border: 2px solid #ffd554;
+  border-radius: 6px;
   cursor: pointer;
   transition: background-color 0.25s ease;
   width: 242px;
-  height: 37px;
+  height: 33px;
 }
 
 .consultation-btn:hover,
 .consultation-btn:focus {
-  background-color: #ffe694;
-  outline: none;
+  background-color: transparent;
 }
 
 .consultation-btn:active {
-  border-color: #cca425;
+  background: #fff6dc;
+}
+.nav-link {
+  position: relative;
+  transition: color 200ms ease-in-out;
+}
+.nav-link::after {
+  content: '';
+  width: 100%;
+  position: absolute;
+  height: 1px;
+  background-color: #000;
+  left: 0px;
+  bottom: 11px;
+  opacity: 0;
+  transition:
+    opacity 200ms ease-in-out,
+    background-color 200ms ease-in-out;
 }
 
+.nav-link:hover::after,
+.nav-link:focus::after {
+  opacity: 1;
+}
+.nav-link:active {
+  color: #ffd554;
+}
+.nav-link:active::after {
+  background-color: #ffd554;
+  opacity: 1;
+}
 .header .container {
   display: flex;
   flex-direction: row;
@@ -68,6 +128,9 @@
 }
 
 @media screen and (min-width: 768px) {
+  .header .container {
+    padding: 0 64px;
+  }
   .menu-open-btn {
     display: flex;
   }
@@ -100,16 +163,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    flex-grow: 1;
-    margin-left: 40px;
+    flex-grow: 0.5;
+    margin-left: 0px;
     margin-right: 0;
   }
 
   .header-nav {
     display: block;
-
-    margin-left: auto;
-    margin-right: auto;
   }
 
   .nav-list {
@@ -122,19 +182,13 @@
   }
 
   .nav-link {
-    font-family: sans-serif;
+    font-family: 'Open Sans', sans-serif;
     text-decoration: none;
     color: #000000;
     font-size: 18px;
     font-weight: 400;
-    transition: color 0.25s ease;
-  }
-
-  .nav-link:hover,
-  .nav-link:focus {
-    color: #000000;
-    text-decoration: underline;
-    outline: none;
+    line-height: 1.6;
+    transition: color 200ms ease-in-out;
   }
 }
 
