@@ -1,0 +1,135 @@
+.popular-events .event-item {
+  display: flex;
+  flex-direction: column;
+  height: 454px;
+  gap: 16px;
+}
+
+.popular-events .event-info {
+  flex-grow: 1;
+}
+
+.popular-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 48px;
+}
+
+.popular-buttons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 10;
+}
+
+.popular-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 48px;
+  height: 48px;
+  padding: 12px;
+
+  border: 1px solid #e6e6e6;
+  border-radius: 4px;
+  background-color: #f3f3f3;
+  color: #000000;
+
+  transition:
+    background-color 250ms ease,
+    color 250ms ease,
+    opacity 250ms ease;
+}
+
+.popular-button:hover,
+.popular-button:focus {
+  background-color: #e6e6e6;
+}
+
+.popular-button:active {
+  background-color: #d9d9d9;
+}
+
+.popular-button.swiper-button-disabled,
+.popular-button:disabled {
+  cursor: not-allowed;
+  opacity: 1;
+  color: #b7b7b7;
+  background-color: #f3f3f3;
+  border-color: #e6e6e6;
+}
+
+.popular-button-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+  fill: currentColor;
+}
+
+.popular-events .popular-pagination.swiper-pagination-bullets,
+.popular-events .popular-pagination.swiper-pagination-horizontal,
+.popular-events .swiper-pagination-bullets.swiper-pagination-horizontal {
+  position: static !important;
+  left: auto !important;
+  right: auto !important;
+  top: auto !important;
+  bottom: auto !important;
+  width: auto !important;
+  transform: none !important;
+}
+
+.popular-events .popular-pagination .swiper-pagination-bullet {
+  display: block;
+  flex-shrink: 0;
+
+  width: 8px !important;
+  height: 8px !important;
+  margin: 0 !important;
+
+  border-radius: 50%;
+  background-color: #c7c2b6;
+  opacity: 1 !important;
+
+  transition:
+    width 250ms ease,
+    height 250ms ease,
+    background-color 250ms ease;
+}
+
+.popular-events .popular-pagination .swiper-pagination-bullet-active {
+  width: 14px !important;
+  height: 14px !important;
+
+  background-color: #000000;
+}
+
+.popular-events
+  .popular-pagination
+  .swiper-pagination-bullet-active
+  + .swiper-pagination-bullet {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.popular-events
+  .popular-pagination
+  .swiper-pagination-bullet:has(+ .swiper-pagination-bullet-active) {
+  width: 10px !important;
+  height: 10px !important;
+}
+
+.popular-events .popular-pagination {
+  position: static !important;
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+
+  width: auto !important;
+  height: 14px;
+  margin: 0 0 0 8px !important;
+  transform: none !important;
+}

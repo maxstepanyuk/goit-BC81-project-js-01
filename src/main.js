@@ -1,6 +1,7 @@
 import './js/header.js';
 import './js/navbar.js';
 import './js/hero.js';
+import './js/popular-events.js';
 import './js/event-list.js';
 import './js/about-us.js';
 import './js/faq.js';
