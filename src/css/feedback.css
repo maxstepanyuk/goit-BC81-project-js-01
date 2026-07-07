@@ -171,3 +171,37 @@
   width: 16px;
   height: 16px;
 }
+
+.feedback-loader {
+  --color-1: #000000;
+  --size: 1px;
+  width: calc(48 * var(--size));
+  height: calc(48 * var(--size));
+  border: calc(5 * var(--size)) solid var(--color-1);
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation-feedback 1s linear infinite;
+  margin: 0 auto;
+
+  position: absolute;
+  top: calc(50% - 30px);
+  left: calc(50% - 30px);
+}
+
+@keyframes rotation-feedback {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.feedback-loader-wrapper.is-hidden {
+  display: none;
+}
+
+.feedback-list-loader-wrapper {
+  height: 416px;
+}
