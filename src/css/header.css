@@ -122,6 +122,15 @@
   display: flex;
   align-items: center;
 }
+.burger-icon{
+  transition: fill 200ms ease-in-out;
+}
+
+.menu-open-btn:hover .burger-icon,
+.menu-open-btn:focus .burger-icon,
+.menu-open-btn:active .burger-icon{
+  fill: #ffd554
+}
 
 .header-menu {
   display: none;
