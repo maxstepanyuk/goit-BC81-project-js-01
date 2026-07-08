@@ -45,11 +45,13 @@
 
 .popular-button:hover,
 .popular-button:focus {
-  background-color: #e6e6e6;
+  border: 2px solid #ffd554;
+  background-color: #ffffff;
 }
 
 .popular-button:active {
-  background-color: #d9d9d9;
+  border: 2px solid #ffd554;
+  background-color: #fff6dc;
 }
 
 .popular-button.swiper-button-disabled,
@@ -76,7 +78,7 @@
   right: auto !important;
   top: auto !important;
   bottom: auto !important;
-  width: auto !important;
+  width: 80px !important;
   transform: none !important;
 }
 
@@ -132,4 +134,18 @@
   height: 14px;
   margin: 0 0 0 8px !important;
   transform: none !important;
+}
+
+/* Styles for Tablet devices */
+@media only screen and (min-width: 768px) {
+  .section.popular-events {
+    padding: 48px 0;
+  }
+}
+
+/* Styles for Desktop devices */
+@media only screen and (min-width: 1440px) {
+  .section.popular-events {
+    padding: 64px 0;
+  }
 }

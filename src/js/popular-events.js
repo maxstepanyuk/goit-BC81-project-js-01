@@ -71,7 +71,7 @@ async function initPopularEvents() {
       },
       breakpoints: {
         768: { slidesPerView: 2 },
-        1440: { slidesPerView: 4 },
+        1440: { slidesPerView: 4, spaceBetween: 32 },
       },
     });
   } catch (error) {
